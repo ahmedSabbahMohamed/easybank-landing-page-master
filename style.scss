@@ -1,0 +1,245 @@
+@use './SASS/helpers/colors&fonts' as *;
+@use './SASS/layouts/globalrules' as *;
+@use './SASS/layouts/normalize' as *;
+
+// start header
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: $white;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    box-shadow: 0 0 .25rem $dGray;
+    z-index: 999;
+    .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            padding: 1rem 0;
+        }
+        .navigation {
+            display: flex;
+            a {
+                display: inline-block;
+                padding: 1rem;
+                color: $dGray;
+            }
+        }
+        .menu {
+            border: none;
+            background-color: transparent;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        .close {
+            border: none;
+            background-color: transparent;
+            transform: scale(1.1);
+            cursor: pointer;
+            display: none;
+        }
+    }
+    .mobile-nav {
+        position: absolute;
+        z-index: 2;
+        width: calc(100% - 4rem);
+        top: 5rem;
+        left: 1rem;
+        right: 1rem;
+        padding: 1rem;
+        background-color: $white;
+        border-radius: .5rem;
+        box-shadow: 0 0 1rem $darkBlue;
+        display: none;
+        ul li {
+            text-align: center;
+        }
+        a {
+            color: $darkBlue;
+            display: inline-block;
+            padding: 1rem;
+            &:hover {
+                color: $limeGreen;
+            }
+        }
+    }
+}
+// end header
+
+// start main
+main {
+    margin-top: 69px;
+    .hero {
+        background-color: $vlGray;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        .hero-sec {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h1 {
+                font-weight: 400;
+                font-size: 3rem;
+            }
+            p {
+                color: $dGray;
+                line-height: 1.5;
+            }
+        }
+        .hero-img {
+            overflow: hidden;
+            .img-hero {
+                position: absolute;
+                top: -20rem;
+                right: -35rem;
+                z-index: -1;
+            }
+            .img-hero2 {
+                position: absolute;
+                z-index: -1;
+                right: 5rem;
+                transform: scale(1.5);
+            }
+        }
+        .mockups {
+            margin-top: 5rem;
+        }
+    }
+    .explain {
+        background-color: $lGray;
+        margin-top: -24px;
+        padding: 5rem 0;
+        .q-a {
+            h1 {
+                font-weight: 300;
+            }
+            p {
+                color: $dGray;
+            }
+        }
+        .cards {
+            .card {
+                .card-img {
+                    width: 100%;
+                    img {
+                        width: 20%;
+                    }
+                }
+            }
+        }
+    }
+    .last {
+        background-color: $vlGray;
+        margin-top: -24px;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        h1 {
+            font-weight: 300;
+        }
+        .cards {
+            .card {
+                background-color: $white;
+                .card-img {
+                    img {
+                        height: 200px;
+                    }
+                }
+                .card-body {
+                    padding: 1rem;
+                    small {
+                        color: $dGray;
+                    }
+                }
+            }
+        }
+    }
+}
+//end main
+
+// start footer
+footer {
+    background-color: $darkBlue;
+    padding: 2rem 0;
+    .social {
+        display: flex;
+        span {
+            display: inline-block;
+            padding-right: 1rem;
+            margin-top: 5rem;
+            img {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+    .nav1 {
+        ul li {
+            color: $white;
+            padding: 1rem;
+            cursor: pointer;
+            &:hover {
+                color: $limeGreen;
+            }
+        }
+    }
+     p {
+        color: $white;
+        margin-top: 5rem;
+    }
+}
+// end footer
+
+// responsive
+@media (min-width: 801px) {
+    .menu {
+        display: none;
+    }
+    .img-hero {
+        display: block;
+    }
+    .img-hero2 {
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    .nav-links,.responsive {
+        display: none;
+    }
+    .menu {
+        display: block;
+    }
+}
+@media (max-width: 992px) {
+
+    * {
+        text-align: center;
+    }
+
+    footer .social .center {
+        margin: auto;
+    }
+
+    .img-hero {
+        display: none;
+    }
+    .img-hero2 {
+        display: block;
+    }
+    main .hero .hero-sec {
+        grid-template-columns: 1fr;
+        flex-direction: column-reverse;
+    }
+    main .hero .mockups {
+        margin-top: 1rem;
+    }
+    .hero .hero-sec .desc {
+        text-align: center;
+        button {
+            margin-bottom: 1rem;
+        }
+    }
+}

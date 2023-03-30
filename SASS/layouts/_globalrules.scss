@@ -1,0 +1,63 @@
+// font
+@use '../helpers/colors&fonts' as *;
+
+html {
+    font-size: 18px;
+    font-family: 'Public Sans';
+}
+
+.container {
+    max-width: 909pt;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15pt;
+    padding-right: 15pt;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.request {
+    border: none;
+    border-radius: 2rem;
+    padding: .7rem;
+    background-image: -moz-linear-gradient(150deg, $limeGreen, $brightCyan);
+    background-image: linear-gradient(150deg, $limeGreen, $brightCyan);
+    cursor: pointer;
+    a {
+        color: $white;
+    }
+    &:hover{
+        opacity: .6;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    place-items: center;
+    gap: 1rem;
+    margin-top: 5rem;
+    .card {
+        h2 {
+            font-weight: 300;
+        }
+        p {
+            line-height: 1.5;
+            color: $dGray;
+        }
+    }
+}
